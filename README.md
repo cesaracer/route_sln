@@ -13,3 +13,6 @@
 
 ## About
 This solution utilizes the Google Maps/Directions API to determine the best route based on the way points provided. In order to connect to the Google API, this solution utilizes a proxy to make calls and receive a response. Additionally, this solution utilizes packages such as redux and thunk to improve the reusability of the components and making it easier to add additional functionality in the future.
+
+## Important to Note
+API is kind of slow so it may take a couple of seconds to receive response
