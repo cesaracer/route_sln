@@ -1,7 +1,12 @@
-# Route Planning Solution
+# Getting Started
 
-## Packages Needed
+## Necessary Packages
+- react-redux
+- redux
+- redux-thunk
 
-## How to deploy
 
-## Working example
+## What APIs are being used
+- Google Directions
+- Custom .NET API
+

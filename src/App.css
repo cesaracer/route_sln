@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+.App{
+  display: flex;
+  flex-direction: row;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form{
+  width: 40%;
+  height: 40vh;
+  margin-top: 10vh;
+  margin-left: 5%;
+  border: solid grey 1px;
+  border-radius: 20px;
+  box-shadow: lightgray 0px 3px 3px;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.order-list{
+  margin-top: 10vh;
+  margin-left: 5%;
+  width: 10%;
+  float: left;
+  height: 80vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-group-main{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.form-group-sub{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.form-group-btn{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+
+.form-group-cell{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 80%;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.form-group-cell-2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-group-cell-2 #input{
+  width: 70%;
+}
+
+.form-group-cell-3{
+  width: 60%;
+}
+
+.form-group-cell-3 label{
+  width: 20%;
 }

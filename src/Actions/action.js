@@ -1,9 +1,33 @@
+import { ADD_WAYPOINT, REMOVE_WAYPOINT, SET_ROUTE } from "./actionTypes"
 
-export const fetchRoute = (points) => {
+export const addWaypoint = (point) => {
+    return{
+        type: ADD_WAYPOINT,
+        point
+    }
+}
+
+// export const removeWaypoint = (point) => {
+//     return{
+//         type: REMOVE_WAYPOINT,
+//         point
+//     }
+// }
+
+export const setRoute = (route) => {
+    return{
+        type: SET_ROUTE,
+        route
+    }
+}
+
+export const fetchRoute = (origin, destination, waypoints) => {
     return(dispatch) => {
+        let points = waypoints.join('8');
 
-
-        console.log("hello")
-        //api call
+        fetch(`https://ramos-routeplanner.azurewebsites.net//map/route?Origin=${encodeURIComponent(origin)}&Destination=${encodeURIComponent(destination)}&Waypoints=${points}`)
+        .then(res => res.json())
+        .then(data => dispatch(setRoute(data["routes"]["0"]["waypoint_order"])))
+        .catch(err => console.log(err));
     }
 }

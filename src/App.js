@@ -1,19 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './Components/Header';
-import DestinationEntry from './Components/DestinationEntry';
-import OrderListContainer from './Components/OrderListContainer';
-import Map from './Components/Map';
+import DataEntryForm from './Components/DataEntryForm';
+import RouteOrderList from './Components/RouteOrderList';
+import WaypointList from './Components/WaypointList';
 
 function App() {
+
   return (
     <div className="App">
-      <Header/>
-      <DestinationEntry/>
-      <div>
-        <OrderListContainer/>
-        <Map/>
-      </div>
+      <DataEntryForm/>
+      <WaypointList/>
+      <RouteOrderList/>
     </div>
   );
 }
