@@ -22,8 +22,22 @@ function RouteOrderList(props){
             <h2>Route Order</h2>
             <ol>
                 {
+                    props.origin ?
+                    <li>{props.origin}</li>
+                    :
+                    <li hidden></li>
+                }
+                
+                {
                     waypointOrder.map(i => <li>{i}</li>)
                 }
+                {
+                    props.destination ?
+                    <li>{props.destination}</li>
+                    :
+                    <li hidden></li>
+                }
+                
             </ol>
         </div>
     )
@@ -31,6 +45,8 @@ function RouteOrderList(props){
 
 const mapStateToProps = (state) => {
     return{
+        origin: state.origin,
+        destination: state.destination,
         route: state.route,
         waypoints: state.waypoints
     }

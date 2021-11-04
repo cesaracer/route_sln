@@ -1,4 +1,4 @@
-import { ADD_WAYPOINT, REMOVE_WAYPOINT, SET_ROUTE } from "./actionTypes"
+import { ADD_WAYPOINT, REMOVE_WAYPOINT, SET_DESTINATION, SET_ORIGIN, SET_ROUTE } from "./actionTypes"
 
 export const addWaypoint = (point) => {
     return{
@@ -18,6 +18,20 @@ export const setRoute = (route) => {
     return{
         type: SET_ROUTE,
         route
+    }
+}
+
+export const setOrigin = (origin) => {
+    return{
+        type: SET_ORIGIN,
+        origin
+    }
+}
+
+export const setDestination = (destination) => {
+    return{
+        type: SET_DESTINATION,
+        destination
     }
 }
 

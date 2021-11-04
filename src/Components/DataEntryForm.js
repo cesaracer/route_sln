@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { connect } from "react-redux"
-import { addWaypoint, fetchRoute } from "../Actions/action";
+import { addWaypoint, fetchRoute, setDestination, setOrigin } from "../Actions/action";
 
 function DataEntryForm(props){
     const [origin, setOrigin] = useState('');
@@ -15,11 +15,14 @@ function DataEntryForm(props){
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        props.fetchRoute(origin, destination, props.waypoints)
+        props.setOrigin(origin);
+        props.setDestination(destination);
+        props.fetchRoute(origin, destination, props.waypoints);
     }
 
     return(
         <form>
+            <h2>Destination Entry</h2>
                 <div className='form-group-cell'>
                     <label>Origin:</label>
                     <input type='text' value={origin} onChange={e => setOrigin(e.target.value)}/>
@@ -60,6 +63,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
+        setOrigin: (o) => dispatch(setOrigin(o)),
+        setDestination: (d) => dispatch(setDestination(d)),
         addWaypoint: (point) => dispatch(addWaypoint(point)),
         fetchRoute: (origin, destination, waypoints) => dispatch(fetchRoute(origin, destination, waypoints))
     }

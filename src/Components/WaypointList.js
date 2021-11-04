@@ -15,6 +15,8 @@ function WaypointList(props){
 
 const mapStateToProps = (state) => {
     return{
+        origin: state.origin,
+        destination: state.destination,
         waypoints: state.waypoints
     }
 }

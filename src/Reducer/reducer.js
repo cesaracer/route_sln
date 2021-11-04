@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { ADD_WAYPOINT, REMOVE_WAYPOINT, SET_ROUTE } from "../Actions/actionTypes";
+import { ADD_WAYPOINT, REMOVE_WAYPOINT, SET_DESTINATION, SET_ORIGIN, SET_ROUTE } from "../Actions/actionTypes";
 
 const waypointsReducer = (state = [], action) => {
     switch(action.type){
@@ -28,7 +28,27 @@ const routeReducer = (state = [], action) => {
     }
 }
 
+const originReducer = (state = '', action) => {
+    switch(action.type){
+        case SET_ORIGIN:
+            return state = action.origin
+        default:
+            return state
+    }
+}
+
+const destinationReducer = (state = '', action) => {
+    switch(action.type){
+        case SET_DESTINATION:
+            return state = action.destination
+        default:
+            return state;
+    }
+}
+
 const rootReducer = combineReducers({
+    origin: originReducer,
+    destination: destinationReducer,
     waypoints: waypointsReducer,
     route: routeReducer
 });
